@@ -18,6 +18,7 @@ func main() {
 	}
 
 	email := service.NewEmailService(cnf)
+	account := service.NewAccountService(cnf)
 
 	// bikin server
 	worker := asynq.NewServer(redisConnection, asynq.Config{
@@ -26,6 +27,7 @@ func main() {
 	// server handler
 	mux := asynq.NewServeMux()
 	mux.HandleFunc(email.SendEmailQueue())
+	mux.HandleFunc(account.GenerateMutation())
 
 	if err := worker.Run(mux); err != nil {
 		log.Fatal(err.Error())
