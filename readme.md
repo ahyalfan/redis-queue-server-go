@@ -1,6 +1,6 @@
 # Golang Base Project
 
-This is a base project for implementasi simple fast identity online using Golang with the hibiken/asynq for server redis queue. godotenv Configuration is managed via an env file.
+This is a base project for redis-server queue using Golang with the hibiken/asynq for server redis queue. godotenv Configuration is managed via an env file.
 
 ## Features
 
